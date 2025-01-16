@@ -14,4 +14,4 @@ jobs:
         with:
           context: .
           push: false  # Only test the build process.
-          tags: DiscordMuteTimerBot:latest
+          tags: discordmutetimerbot:latest

@@ -1,4 +1,4 @@
-name: Website Beta Build
+name: Bot Beta Build
 
 on:
   push:
@@ -33,6 +33,6 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           push: true
-          tags: beanbeanjuice/DiscordMuteTimerBot:beta
+          tags: beanbeanjuice/discordmutetimerbot:beta
           provenance: true
           sbom: true
