@@ -1,4 +1,4 @@
-name: Website Release Build
+name: Bot Release Build
 
 on:
   push:
@@ -34,6 +34,6 @@ jobs:
         with:
           push: true
           tags: |
-            beanbeanjuice/DiscordMuteTimerBot:release
+            beanbeanjuice/discordmutetimerbot:release
           provenance: true
           sbom: true
