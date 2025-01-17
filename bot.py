@@ -1,5 +1,6 @@
 import os
 import discord
+from discord import app_commands
 from discord.ext import commands
 import asyncio
 
@@ -8,6 +9,7 @@ TOKEN: str = os.environ['BOT_TOKEN']
 
 # Define the bot with the necessary intents
 intents = discord.Intents.default()
+intents.messages = True
 
 # Create a bot instance
 bot = commands.Bot(command_prefix="/", intents=intents)
@@ -32,7 +34,8 @@ def parse_duration(duration: str):
 
 
 # Define the /muteme slash command
-@bot.tree.command(name="muteme", description="Mute yourself after a specified duration (e.g., 10s, 5m, 2h, 1d).")
+@bot.tree.command(name="mute-me", description="Mute yourself after a specified duration.")
+@app_commands.describe(duration="The time to wait until the bot server mutes you. (e.g., 10s, 5m, 2h, 1d)")
 async def muteme(interaction: discord.Interaction, duration: str):
     mute_duration = parse_duration(duration)
     if mute_duration is None:
